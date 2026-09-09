@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAW IQ — 法律常识测试</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <div class="brand" id="brand-logo"><span class="brand-mark">§</span> LAW IQ</div>
+      <div class="top-actions"><button id="lang-btn" class="lang-btn">EN</button><div class="jurisdiction">U.S. LAW · STUDENT EDITION</div></div>
+    </header>
+
+    <section id="start-screen" class="screen active">
+      <div class="hero-card">
+        <div class="eyebrow" data-i18n="eyebrow">10 QUESTIONS · NO LAW DEGREE REQUIRED</div>
+        <h1><span data-i18n="titleA">你真的懂</span><br><span data-i18n="titleB">法律常识</span><span data-i18n="titleC">吗？</span></h1>
+        <p class="hero-copy" data-i18n="copy">
+          不是背法条，而是判断现实生活中的法律边界。
+          每道题都故意留了一个“看起来很合理”的错误答案。
+        </p>
+
+        <div class="stats">
+          <div><strong>10</strong><span data-i18n="questions">道题</span></div>
+          <div><strong>≈ 5</strong><span data-i18n="minutes">分钟</span></div>
+          <div><strong>4</strong><span data-i18n="levels">个等级</span></div>
+        </div>
+
+        <button id="start-btn" class="primary-btn"><span data-i18n="start">开始测试</span> <span>→</span></button>
+
+        <div class="notice">
+          <strong data-i18n="note">先说明：</strong><span data-i18n="noteText">本测试以美国法律的一般原则为背景，部分问题会因州法、具体事实而不同。
+          它是知识测试，不是法律意见。</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz-screen" class="screen">
+      <div class="quiz-header">
+        <div>
+          <div class="eyebrow" id="category-label">LEGAL BASICS</div>
+          <div class="question-count"><span id="current-num">01</span> / 10</div>
+        </div>
+        <div class="score-mini"><span data-i18n="score">SCORE</span> <strong id="score">0</strong></div>
+      </div>
+
+      <div class="progress-track"><div id="progress" class="progress"></div></div>
+
+      <article class="question-card">
+        <div class="scenario" id="scenario"></div>
+        <h2 id="question"></h2>
+        <div id="answers" class="answers"></div>
+        <div id="explanation" class="explanation hidden"></div>
+      </article>
+
+      <div class="quiz-footer">
+        <span id="tip" data-i18n="tip">先判断法律规则，再看直觉。</span>
+        <button id="next-btn" class="secondary-btn" disabled>下一题 →</button>
+      </div>
+    </section>
+
+    <section id="result-screen" class="screen">
+      <div class="result-card">
+        <div class="eyebrow" data-i18n="complete">TEST COMPLETE</div>
+        <div class="result-ring"><span id="final-score">0</span><small>/10</small></div>
+        <div class="result-tag" id="result-tag">—</div>
+        <h1 id="result-title">—</h1>
+        <p id="result-description"></p>
+
+        <div class="breakdown">
+          <div><span data-i18n="correct">答对</span><strong id="correct-count">0</strong></div>
+          <div><span data-i18n="wrong">答错</span><strong id="wrong-count">0</strong></div>
+          <div><span data-i18n="accuracy">正确率</span><strong id="accuracy">0%</strong></div>
+        </div>
+
+        <div class="mistakes" id="mistakes"></div>
+
+        <div class="result-actions">
+          <button id="restart-btn" class="primary-btn"><span data-i18n="restart">再测一次</span> ↻</button>
+        </div>
+
+        <div class="sources-note">
+          题目参考：U.S. Copyright Office、FTC、Cornell Legal Information Institute (Wex) 等公开法律资料。
+          具体案件仍应以适用法律和专业法律意见为准。
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="i18n.js"></script>
+  <script src="easter-eggs.js"></script>
+</body>
+</html>
