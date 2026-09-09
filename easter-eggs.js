@@ -27,10 +27,11 @@
     }
   });
 
-  // 📜 Objection! Egg — choose D on question 4 (the pure-opinion trap)
+  // 📜 Objection! Egg — choose any wrong answer on question 4
+  // Q4's correct answer is D, so A/B/C trigger the egg.
   window.addEventListener('lawiq:answer',e=>{
-    if(e.detail.questionIndex===3 && e.detail.choice===3 && !e.detail.correct){
-      toast('📜 OBJECTION!',en()?'That answer is confidently wrong. Sustained.':'这个答案错得很有自信。反对有效。');
+    if(e.detail.questionIndex===3 && !e.detail.correct){
+      toast(en()?'📜 OBJECTION!':'📜 反对！',en()?'That answer is confidently wrong. Sustained.':'这个答案错得很有自信。反对有效。');
     }
   });
 
